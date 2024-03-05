@@ -1,0 +1,21 @@
+ust sari 
+
+@media (min-width: 1024px)
+.promotion-block.style-1:before {
+    --tw-bg-opacity: 1;
+    background-color: #fd0;
+    background-color: rgba(255,221,0,var(--tw-bg-opacity));
+    content: "";
+    left: calc(50% - 23px);
+    padding-top: 20%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%) rotate(-33deg);
+    width: 200vw;
+}
+
+alt sectionlar
+background: linear-gradient(to bottom right,#fd0,#fd0 50%,transparent 0,transparent);
+
+
+modal - basanda ustde acilan pencere (flowbite)
