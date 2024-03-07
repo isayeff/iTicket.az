@@ -9,6 +9,8 @@
     font-family: sfpro;
 }
 
+body {background-color: #F9F9F9;}
+
 @media (min-width: 1024px) {
     nav:before {
         --tw-bg-opacity:1;
@@ -27,10 +29,30 @@
 
 body {overflow-x: hidden;}
 
-/* .mySwiper1 {
-    box-shadow: 0px 0px 100px 54px rgba(0,0,0,0.1);
-} */
+.resNav {box-shadow: 0px 41px 50px 5px rgba(0,0,0,0.1);}
 
-.resNav {
-    box-shadow: 0px 41px 50px 5px rgba(0,0,0,0.1);
+@media (min-width: 1256px) {
+    /* .hoverLink li .active:before {
+        background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 88 9'%3E%3Cpath fill='%23FD0' d='m0 5 88-5v4L0 9z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+        height: 9px;
+        width: 70px;
+        background-size: 100px;
+        content: "";
+        position: absolute;
+        top: 30px;
+    } */
+
+    .hoverLink li a:hover:before {
+        background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 88 9'%3E%3Cpath fill='%23FD0' d='m0 5 88-5v4L0 9z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+        height: 9px;
+        width: 70px;
+        background-size: 100px;
+        content: "";
+        position: absolute;
+        top: 30px;
+    }
+
+    .lHover:hover:before {
+        width: 140px !important;
+    }
 }

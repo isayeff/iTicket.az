@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import '../../css/slider1.css'
+import '../../css/promotion.css'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -18,7 +18,7 @@ export default function Promotion() {
         <>
             <div className="promotionSec lg:px-[20px]">
                 <Swiper
-                    spaceBetween={30}
+                    spaceBetween={0}
                     centeredSlides={true}
                     loop={true}
                     autoplay={{

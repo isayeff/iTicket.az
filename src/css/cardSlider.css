@@ -1,0 +1,150 @@
+.swiperSec1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    /* background-color: #E4E4E4; */
+}
+
+.swiperSec1 .swiper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.swiperSec1 .swiper-slide .swiperCard {
+    position: relative;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    /* max-width: 471px; */
+    max-height: min-content; 
+    height: 80%; /*deyisen bu olacaq 80%*/
+    /* height: 80%; */
+    transition: all 0.3s ease-out;
+}
+
+.swiperSec1 .swiper-slide {
+    max-height: 100%;
+    transition: all 0.3s ease-out;
+}
+
+.swiperSec1 .swiper-slide .swiperCard img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiperSec1 .card-main {
+    position: absolute;
+    transition: 0.3s;
+}
+
+.swiperSec1 .card-main button {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    border: 0;
+    width: 110px;
+    height: 55px;
+    background-color: #FFDD00;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    z-index: 99;
+}
+
+.swiperSec1 .card-info {
+    color: #ffffffbd;
+    position: absolute;
+    bottom: 8%;
+    left: 5%;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.event-name {
+    max-width: 310px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-drop {
+    color: #00000000;
+    padding: 0 20px;
+    margin-top: 20px;
+    transition: .1s;
+}
+
+.swiperSec1 .swiper-slide:hover {
+    max-height: 86%;
+}
+
+.swiperSec1 .swiper-slide:hover .card-main {
+    margin-bottom: 15%;
+}
+
+.swiperSec1 .swiper-slide:hover .card-main button {
+    margin-bottom: 10px;
+}
+
+.swiperSec1 .swiper-slide:hover .card-info {
+    bottom: 15px;
+    scale: .9;
+    color: #ffffff00;
+}
+
+.swiperSec1 .swiper-slide:hover .card-drop {
+    color: #000;
+}
+
+.event-name-drop {
+    max-width: 5px;
+    font-size: .84rem;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.swiperSec1 .swiper-slide:hover .event-name-drop {
+    scale: 1.5;
+}
+
+.swiperSec1 .swiper-button-next, .swiperSec1 .swiper-button-prev {
+    display: none;
+}
+
+.swiperSec1 .swiper-button-next::after, .swiperSec1 .swiper-button-prev::after {
+    width: 80px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: #000;
+    background-color: #FFDD00;
+    font-size: 23px;
+    font-weight: 900;
+    /* border-radius: 50% 0 0 50%; */
+    clip-path: circle(46.4% at 100% 50%);
+}
+
+.swiperSec1 .swiper-button-prev::after {
+    clip-path: circle(46.4% at 0 50%); 
+}
+
+@media only screen and (min-width:768px) {
+    .swiperSec1 .swiper-slide .swiperCard {
+        height: 100%;
+    }
+    .swiperSec1 .swiper-button-next,.swiperSec1 .swiper-button-prev {
+        display: flex;
+    }
+}

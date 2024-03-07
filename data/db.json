@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Mert Demir",
+        "img": "./src/assets/img/img1.png",
+        "bg": "./src/assets/img/bg1.jpg",
+        "date": "29 mart 2024",
+        "place": "Heydər Əliyev Sarayı",
+        "price": "15"
+    },
+    {
+        "id": 2,
+        "name": "Old City JAZZ nights at Best Place",
+        "img": "./src/assets/img/img2.png",
+        "bg": "./src/assets/img/bg2.jpg",
+        "date": "10 fevral 2024",
+        "place": "Best Place Baku",
+        "price": "7"
+    },
+    {
+        "id": 3,
+        "name": "Hollywood Soundtracks",
+        "img": "./src/assets/img/img3.png",
+        "bg": "./src/assets/img/bg3.jpg",
+        "date": "17 fevral 2024",
+        "place": "Heydər Əliyev sarayı",
+        "price": "30"
+    },
+    {
+        "id": 4,
+        "name": "Alexander Rybak",
+        "img": "./src/assets/img/img4.png",
+        "bg": "./src/assets/img/bg4.jpg",
+        "date": "28 fevral 2024",
+        "place": "Heydər Əliyev sarayı",
+        "price": "35"
+    },
+    {
+        "id": 5,
+        "name": "Ümumdünya Qadınlar Festivalı",
+        "img": "./src/assets/img/img5.png",
+        "bg": "./src/assets/img/bg5.jpg",
+        "date": "8 mart 2024",
+        "place": "Baku Crystal Hall",
+        "price": "50"
+    },
+    {
+        "id": 6,
+        "name": "Çakal",
+        "img": "./src/assets/img/img6.png",
+        "bg": "./src/assets/img/bg6.jpg",
+        "date": "24 may 2024",
+        "place": "Bakı Tennis Akademiyası",
+        "price": "30"
+    }
+]

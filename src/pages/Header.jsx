@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import logo from '../assets/img/logo.png'
 import { IoIosCart } from "react-icons/io";
 import { FaConfluence, FaRegUser } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { BsThreeDots } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
@@ -12,9 +12,11 @@ import { IoSearch } from "react-icons/io5";
 function Header() {
 
   const [burger, setBurger] = useState(false)
-  function handleBurger() {
-    setBurger(!burger)
-  }
+  const [drop, setDrop] = useState(false)
+
+  function handleBurger() {setBurger(!burger)}
+
+  function handleDrop() {setDrop(!drop)}
 
   return (
     <>
@@ -44,13 +46,25 @@ function Header() {
                 <Link className='border-[1px] border-[#ffffff] rounded-l-[5px] p-[4px]'>EN</Link>
                 <Link className='border-[1px] border-[#ffffff] rounded-r-[5px] p-[4px]'>RU</Link>
               </div>
-              <ul className='flex items-center justify-between text-[20px] gap-[20px]'>
-                <li><Link>Bütün Tədbirlər</Link></li>
-                <li><Link>Konsert</Link></li>
-                <li><Link>Tamaşa</Link></li>
-                <li><Link>Uşaqlar</Link></li>
-                <li><Link>Dream Fest 2024</Link></li>
-                <li><BsThreeDots className='text-[20px]' /></li>
+              <ul className='hoverLink flex relative items-center justify-between text-[20px] gap-[25px]'>
+                <li><NavLink className='lHover'>Bütün Tədbirlər</NavLink></li>
+                <li><NavLink>Konsert</NavLink></li>
+                <li><NavLink>Tamaşa</NavLink></li>
+                <li><NavLink>Uşaqlar</NavLink></li>
+                <li><NavLink className='lHover'>Dream Fest 2024</NavLink></li>
+                <li><BsThreeDots onClick={handleDrop} className='text-[20px]' />
+                  <ul className={`${drop ? 'block' : 'hidden'} absolute right-0 top-[40px] flex flex-col gap-[15px] bg-white rounded-[15px] text-black p-[20px] text-[18px]`}>
+                    <li><Link>Hayal Kahvesi</Link></li>
+                    <li><Link>İdman</Link></li>
+                    <li><Link>Muzey</Link></li>
+                    <li><Link>Sirk</Link></li>
+                    <li><Link>Turizm</Link></li>
+                    <li><Link>Seminar</Link></li>
+                    <li><Link>Master Klass</Link></li>
+                    <li><Link>Digər</Link></li>
+                    <li><Link>Məhsullar</Link></li>
+                  </ul>
+                </li>
               </ul>
             </div>
             <div className='flex items-center justify-between gap-[20px] text-white text-[22px]'>

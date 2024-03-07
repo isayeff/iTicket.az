@@ -1,9 +1,9 @@
-.swiper {
+.promotionSec .swiper {
     max-width: 1400px;
     max-height: 794px;
 }
 
-.swiper-slide {
+.promotionSec .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -14,23 +14,23 @@
     align-items: center;
 }
 
-.swiper-slide img {
+.promotionSec .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {display: none;}
+.promotionSec .swiper-button-next::after,
+.promotionSec .swiper-button-prev::after {display: none;}
 
 @media only screen and (min-width:1024px) {
-    .swiper {
+    .promotionSec .swiper {
         margin: 20px 0;
         border-radius: 20px;
     }
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
+    .promotionSec .swiper-button-next::after,
+    .promotionSec .swiper-button-prev::after {
         scale: 1.5;
         display: flex;
         justify-content: center;
@@ -44,13 +44,13 @@
         clip-path: circle(46.4% at 100% 50%);
     }
 
-    .swiper-button-prev::after {
+    .promotionSec .swiper-button-prev::after {
         clip-path: circle(46.4% at 0 50%);
         position: absolute;
         left: 0px !important;
     }
 
-    .swiper-button-next::after {
+    .promotionSec .swiper-button-next::after {
         position: absolute;
         right: 0px;
     }
