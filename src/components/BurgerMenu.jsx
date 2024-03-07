@@ -34,7 +34,7 @@ export default function BurgerMenu({burgerStatus, setBurger}) {
                                 leaveFrom="translate-x-0"
                                 leaveTo="translate-x-[-100%]"
                             >
-                                <Dialog.Panel className="pointer-events-auto relative w-screen max-w-[90vw]">
+                                <Dialog.Panel className="pointer-events-auto relative w-screen max-w-[85vw]">
                                     <Transition.Child
                                         as={Fragment}
                                         enter="ease-in-out duration-500"
