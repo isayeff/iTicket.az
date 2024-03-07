@@ -1,25 +1,9 @@
-#app {
-    height: 100%;
-}
-
-html,
-body {
-    position: relative;
-    height: 100%;
-}
-
-body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-}
-
 .swiper {
-    width: 100%;
-    height: 100%;
+    max-width: 1400px;
+    max-height: 794px;
+    margin: 20px 0;
+    border-radius: 20px;
+    /* visibility: hidden; */
 }
 
 .swiper-slide {
@@ -38,4 +22,36 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {display: none;}
+
+@media only screen and (min-width:1054px) {
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        scale: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 20px !important;
+        color: #000;
+        background-color: #FFDD00;
+        font-size: 20px !important;
+        font-weight: 900;
+        /* border-radius: 50% 0 0 50%; */
+        clip-path: circle(46.4% at 100% 50%);
+    }
+
+    .swiper-button-prev::after {
+        clip-path: circle(46.4% at 0 50%);
+        position: absolute;
+        left: 0px !important;
+    }
+
+    .swiper-button-next::after {
+        position: absolute;
+        right: 0px;
+    }
 }

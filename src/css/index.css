@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     font-family: sfpro;
 }
 
 @media (min-width: 1024px) {
-    .promotion-block:before {
+    nav:before {
         --tw-bg-opacity:1;
         background-color: #fd0;
         background-color: rgba(255,221,0,var(--tw-bg-opacity));
@@ -17,6 +20,17 @@
         position: absolute;
         top: 0;
         transform: translateX(-50%) rotate(-33deg);
-        width: 200vw
+        width: 200vw;
+        z-index: -1;
     }
+}
+
+body {overflow-x: hidden;}
+
+/* .mySwiper1 {
+    box-shadow: 0px 0px 100px 54px rgba(0,0,0,0.1);
+} */
+
+.resNav {
+    box-shadow: 0px 41px 50px 5px rgba(0,0,0,0.1);
 }

@@ -21,22 +21,23 @@ function Header() {
       <header className='relative'>
         <BurgerMenu burgerStatus={burger} setBurger={setBurger} />
         <nav>
-          <div className='flex justify-between items-center p-[16px] xl:hidden'>
+          <div className='resNav flex justify-between items-center px-[16px] py-[20px] xl:hidden bg-white'>
             <div>
               <RxHamburgerMenu onClick={handleBurger} className='text-[23px] text-[#BEBEBE]' />
             </div>
             <img className='max-h-[36px]' src={logo} alt="" />
-            <div className='flex items-center gap-[10px]'>
-              <IoIosCart className='text-[20px] text-[#BEBEBE]' />
-              <div className='text-[15px] bg-[#FFDD00] rounded-[50%] p-[10px] text-bold ' >
-                <FaRegUser />
+            <div className='flex items-center gap-[17px]'>
+              <FaRegHeart className='text-[25px] text-[#BEBEBE]' />
+              <IoIosCart className='text-[25px] text-[#BEBEBE]' />
+              <div className='text-[20px] bg-[#FFDD00] rounded-[50%] p-[15px] font-bold ' >
+                <FaRegUser className=' font-bold' />
               </div>
             </div >
           </div>
 
-          <div className='absolute top-[20px] w-[100%] hidden xl:flex items-center justify-between py-[32px] px-[90px] bg-slate-900'>
+          <div className='absolute z-50 top-[10px] w-[100%] hidden xl:flex items-center justify-between py-[32px] px-[90px]'>
             <div>
-              <img className='max-w-[160px]' src={logo} alt="" />
+              <img className='max-h-[36px] brightness-[10000%]' src={logo} alt="" />
             </div>
             <div className='flex items-center justify-between gap-[70px] text-white font-[600]'>
               <div className="lang-switcher text-[#ffffff] text-[12px]">
