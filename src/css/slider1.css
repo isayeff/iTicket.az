@@ -1,9 +1,6 @@
 .swiper {
     max-width: 1400px;
     max-height: 794px;
-    margin: 20px 0;
-    border-radius: 20px;
-    /* visibility: hidden; */
 }
 
 .swiper-slide {
@@ -27,8 +24,11 @@
 .swiper-button-next::after,
 .swiper-button-prev::after {display: none;}
 
-@media only screen and (min-width:1054px) {
-
+@media only screen and (min-width:1024px) {
+    .swiper {
+        margin: 20px 0;
+        border-radius: 20px;
+    }
     .swiper-button-next::after,
     .swiper-button-prev::after {
         scale: 1.5;

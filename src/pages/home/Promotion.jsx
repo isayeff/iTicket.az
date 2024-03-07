@@ -16,7 +16,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 export default function Promotion() {
     return (
         <>
-            <div className="promotionSec px-[20px]">
+            <div className="promotionSec lg:px-[20px]">
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}

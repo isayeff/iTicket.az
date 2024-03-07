@@ -27,9 +27,9 @@ function Header() {
             </div>
             <img className='max-h-[36px]' src={logo} alt="" />
             <div className='flex items-center gap-[17px]'>
-              <FaRegHeart className='text-[25px] text-[#BEBEBE]' />
-              <IoIosCart className='text-[25px] text-[#BEBEBE]' />
-              <div className='text-[20px] bg-[#FFDD00] rounded-[50%] p-[15px] font-bold ' >
+              <FaRegHeart className='md:text-[25px] md:block hidden text-[#BEBEBE]' />
+              <IoIosCart className='md:text-[25px] text-[20px] text-[#BEBEBE]' />
+              <div className='md:text-[20px] bg-[#FFDD00] rounded-[50%] md:p-[15px] p-[10px] font-bold ' >
                 <FaRegUser className=' font-bold' />
               </div>
             </div >
