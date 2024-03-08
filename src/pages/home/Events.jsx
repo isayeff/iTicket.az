@@ -65,6 +65,13 @@ function Events() {
                     </Swiper>
                 </div>
             }
+            <div>
+                {
+                    data.map(item => (
+                        <div>{item.name}</div>
+                    ))
+                }
+            </div>
         </>
     )
 }
