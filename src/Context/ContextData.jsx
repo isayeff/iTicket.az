@@ -10,7 +10,7 @@ function ContextData({children}) {
         .then(res => res.json())
         .then(item => setData(item))
     },[])
-    console.log(data);
+    // console.log(data);
 
     return (
         <>
