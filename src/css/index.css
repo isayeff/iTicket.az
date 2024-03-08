@@ -9,7 +9,11 @@
     font-family: sfpro;
 }
 
-body {background-color: #F9F9F9;}
+body {
+    background-color: #F9F9F9;
+    overflow-x: hidden;
+}
+
 
 @media (min-width: 1024px) {
     nav:before {
@@ -26,8 +30,6 @@ body {background-color: #F9F9F9;}
         z-index: -1;
     }
 }
-
-body {overflow-x: hidden;}
 
 .resNav {box-shadow: 0px 41px 50px 5px rgba(0,0,0,0.1);}
 

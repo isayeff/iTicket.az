@@ -5,6 +5,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { CntxData } from '../../Context/ContextData';
 import '../../css/cardSlider.css'
+import banner1 from '../../assets/img/banner1.jpg'
+import banner1res from '../../assets/img/banner1res.jpg'
 
 
 function Events() {
@@ -16,7 +18,7 @@ function Events() {
                 <h2 className='text-[30px] font-[900]'>Populyar Tədbirlər</h2>
             </div>
             {
-                <div className="swiperSec1 my-[40px]">
+                <div className="swiperSec1 mt-[20px] my-[0] lg:my-[40px]">
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={10}
@@ -65,12 +67,9 @@ function Events() {
                     </Swiper>
                 </div>
             }
-            <div>
-                {
-                    data.map(item => (
-                        <div>{item.name}</div>
-                    ))
-                }
+            <div className='banner container m-auto my-[10px] mb-[40px] lg:my-[80px] flex justify-center items-center px-[30px]'>
+                <img className='hidden lg:block' src={banner1} alt="" /> :
+                <img className='block lg:hidden' src={banner1res} alt="" />
             </div>
         </>
     )
