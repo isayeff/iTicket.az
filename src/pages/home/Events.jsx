@@ -27,10 +27,10 @@ function Events() {
                             disableOnInteraction: false,
                         }}
                         breakpoints={{
-                            540: {
+                            140: {
                                 slidesPerView: 1
                             },
-                            650: {
+                            550: {
                                 slidesPerView: 2,
                                 spaceBetween: 30,
                             },
@@ -57,7 +57,7 @@ function Events() {
                                     </div>
                                     <div className='card-drop'>
                                         <h2 className='event-name-drop font-bold'>{item.name}</h2>
-                                        <p className='text-[.9rem] text-[#666]'>{item.date} {item.place}</p>
+                                        <p className='event-det-drop text-[.9rem] text-[#666]'>{item.date} {item.place}</p>
                                     </div>
                                 </SwiperSlide>
                             ))
