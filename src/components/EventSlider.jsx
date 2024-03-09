@@ -9,7 +9,7 @@ import { CntxData } from '../Context/ContextData';
 function EventSlider() {
 
     const data = useContext(CntxData)
-    console.log(data);        
+    console.log(data.events);        
     
     return (
         <>
@@ -42,7 +42,7 @@ function EventSlider() {
                 className="mySwiper"
             >
                 {
-                    data.map(item => (
+                    data.events?.map(item => (
                         <SwiperSlide key={item.id}>
                             <div className="swiperCard">
                                 <img className='card-bg' src={item.bg} alt="" />

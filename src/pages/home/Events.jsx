@@ -6,6 +6,7 @@ import banner2 from '../../assets/img/banner2.gif'
 import banner1res from '../../assets/img/banner1res.jpg'
 import banner2res from '../../assets/img/banner2res.gif'
 import EventSlider from '../../components/EventSlider';
+import AppBlock from '../../components/AppBlock';
 
 
 function Events() {
@@ -32,6 +33,31 @@ function Events() {
                 <img className='hidden lg:block' src={banner1} alt="" />
                 <img className='block lg:hidden' src={banner1res} alt="" />
             </div>
+            <div className='relative overflow-x-hidden'>
+                <div className='container m-auto px-[20px] triangle pt-[30px]'>
+                    <h2 className='text-[25px] md:text-[30px] font-[900]'>Uşaqlar</h2>
+                </div>
+                <div className="swiperSec1 mt-[20px] my-[0] lg:my-[40px]">
+                    <EventSlider />
+                </div>
+            </div>
+            <div className='relative mt-[70px] overflow-x-hidden'>
+                <div className='container m-auto px-[20px] triangle pt-[30px]'>
+                    <h2 className='text-[25px] md:text-[30px] font-[900]'>Həftəsonları</h2>
+                </div>
+                <div className="swiperSec1 mt-[20px] my-[0] lg:my-[40px]">
+                    <EventSlider />
+                </div>
+            </div>
+            <div className='relative mt-[70px] overflow-x-hidden'>
+                <div className='container m-auto px-[20px] triangle pt-[30px]'>
+                    <h2 className='text-[25px] md:text-[30px] font-[900]'>Yenilik</h2>
+                </div>
+                <div className="swiperSec1 mt-[20px] my-[0] lg:my-[40px]">
+                    <EventSlider />
+                </div>
+            </div>
+            <AppBlock />
         </>
     )
 }
