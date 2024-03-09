@@ -14,7 +14,6 @@ body {
     overflow-x: hidden;
 }
 
-
 @media (min-width: 1024px) {
     nav:before {
         --tw-bg-opacity: 1;
@@ -107,4 +106,8 @@ body {
     .lHover:hover:before {
         width: 140px !important;
     }
+}
+
+footer ul li a {
+    color: #646464;
 }

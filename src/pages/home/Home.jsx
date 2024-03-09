@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Header'
 import Promotion from './Promotion'
 import Events from './Events'
+import Footer from '../Footer'
 
 function Home() {
     return (
@@ -9,6 +10,7 @@ function Home() {
             <Header />
             <Promotion />
             <Events />
+            <Footer />
         </>
     )
 }
