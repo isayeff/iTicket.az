@@ -2,8 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
-    /* background-color: #E4E4E4; */
 }
 
 .swiperSec1 .swiper {
@@ -27,8 +25,6 @@
     /* max-width: 471px; */
     max-height: min-content; 
     /*deyisen bu olacaq 80%*/
-    /* height: 100%; */
-    /* height: 80%; */
     height: 70%;
     transition: all 0.3s ease-out;
 }
@@ -74,7 +70,7 @@
 }
 
 .event-name {
-    max-width: 310px;
+    max-width: 150px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -115,6 +111,7 @@
     white-space: nowrap;
     transition: .3s;
     opacity: 0;
+    text-overflow: ellipsis;
 }
 
 .event-det-drop {opacity: 0;}
@@ -149,6 +146,12 @@
 }
 
 @media only screen and (min-width:768px) {
+    .event-name {
+        max-width: 250px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
     .swiperSec1 .swiper {
         height: 450px;
     }

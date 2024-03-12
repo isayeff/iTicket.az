@@ -49,7 +49,7 @@ function Footer() {
                 <hr className='lg:hidden mb-[25px]' />
             </div>
             <div className="footer-bottom container m-auto px-[32px] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-[15px]">
-                <div class="copyright px-5 lg:px-0 text-center text-[#646464] lg:text-[18px]">
+                <div className="copyright px-5 lg:px-0 text-center text-[#646464] lg:text-[18px]">
                     ITICKET®, «İTİCKET» MMC-nin qeydə alınmış əmtəə nişanıdır.
                 </div>
                 <div className="f-icons h-[70px] lg:w-[350px] flex justify-around items-center bg-[#FFDD00] text-[25px]">

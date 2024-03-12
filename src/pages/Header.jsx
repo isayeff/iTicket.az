@@ -3,23 +3,28 @@ import BurgerMenu from '../components/BurgerMenu'
 import { RxHamburgerMenu } from "react-icons/rx";
 import logo from '../assets/img/logo.png'
 import { IoIosCart } from "react-icons/io";
-import { FaConfluence, FaRegUser } from "react-icons/fa6";
+import { FaRegUser } from "react-icons/fa6";
 import { Link, NavLink } from 'react-router-dom';
 import { BsThreeDots } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
+import LoginPanel from '../components/LoginPanel';
 
 function Header() {
 
   const [burger, setBurger] = useState(false)
   const [drop, setDrop] = useState(false)
+  const [openLog, setOpenLog] = useState(false)
 
   function handleBurger() {setBurger(!burger)}
 
   function handleDrop() {setDrop(!drop)}
 
+  function handleLogPanel() {setOpenLog(!openLog)}
+
   return (
     <>
+      <LoginPanel openLog={openLog} setOpenLog={setOpenLog} />
       <header className='relative'>
         <BurgerMenu burgerStatus={burger} setBurger={setBurger} />
         <nav>
@@ -31,7 +36,7 @@ function Header() {
             <div className='flex items-center gap-[17px]'>
               <FaRegHeart className='md:text-[25px] md:block hidden text-[#BEBEBE]' />
               <IoIosCart className='md:text-[25px] text-[20px] text-[#BEBEBE]' />
-              <div className='md:text-[20px] bg-[#FFDD00] rounded-[50%] md:p-[15px] p-[10px] font-bold ' >
+              <div onClick={handleLogPanel} className='md:text-[20px] bg-[#FFDD00] rounded-[50%] md:p-[15px] p-[10px] font-bold ' >
                 <FaRegUser className=' font-bold' />
               </div>
             </div >
@@ -71,7 +76,7 @@ function Header() {
               <FaRegHeart />
               <IoSearch />
               <IoIosCart />
-              <div className='text-[20px] w-[50px] h-[50px] flex justify-center items-center bg-[#FFDD00] rounded-[50%] p-[10px] text-bold text-black' >
+              <div onClick={handleLogPanel} className='text-[20px] w-[50px] h-[50px] flex justify-center items-center bg-[#FFDD00] rounded-[50%] p-[10px] text-bold text-black' >
                 <FaRegUser />
               </div>
             </div>
