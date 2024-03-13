@@ -9,6 +9,7 @@ import { BsThreeDots } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import LoginPanel from '../components/LoginPanel';
+import SignUp from '../components/SignUp';
 
 function Header() {
 
@@ -42,7 +43,7 @@ function Header() {
             </div >
           </div>
 
-          <div className='absolute z-50 top-[10px] w-[100%] hidden xl:flex items-center justify-between py-[32px] px-[90px]'>
+          <div className='absolute z-10 top-[10px] w-[100%] hidden xl:flex items-center justify-between py-[32px] px-[90px]'>
             <div>
               <img className='max-h-[36px] brightness-[10000%]' src={logo} alt="" />
             </div>

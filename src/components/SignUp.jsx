@@ -1,13 +1,18 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 
 
-export default function LoginPanel({ openLog, setOpenLog }) {
+export default function SignUp({ openSign, setOpenSign, setOpenLog }) {
+
+    function goLogin() {
+        setOpenSign(false)
+        setOpenLog(true)
+    }
 
     return (
-        <Transition.Root show={openLog} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={setOpenLog}>
+        <Transition.Root show={openSign} as={Fragment}>
+            <Dialog as="div" className="relative z-10" onClose={setOpenSign}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -32,9 +37,9 @@ export default function LoginPanel({ openLog, setOpenLog }) {
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
                             <Dialog.Panel className="logPanel relative w-[440px] transform overflow-hidden rounded-[10px] bg-white p-[30px] md:p-[40px] shadow-xl transition-all">
-                                <div className='flex flex-col gap-[20px]'>
+                                <div className='flex flex-col gap-[20px] z-[99]'>
                                     <div className='flex justify-between items-center'>
-                                        <h3 className='text-[30px] font-bold'>Daxil Ol</h3>
+                                        <h3 className='text-[30px] font-bold'>Qeydiyyat</h3>
                                         <div className='flex items-center gap-[10px]'>
                                             <div className='bg-[#3b5a97] rounded-[50%] w-[50px] h-[50px] flex justify-center items-center'>
                                                 <FaFacebookF className='text-[1.1rem] text-[white]' />
@@ -45,13 +50,17 @@ export default function LoginPanel({ openLog, setOpenLog }) {
                                         </div>
                                     </div>
                                     <div className='flex flex-col gap-[20px]'>
+                                        <input className='max-[90%] h-[55px] py-[16px] px-[24px] text-[1.2rem] outline-0 border-[1px] rounded-[7px]' type="text" placeholder='Ad' />
+                                        <input className='max-[90%] h-[55px] py-[16px] px-[24px] text-[1.2rem] outline-0 border-[1px] rounded-[7px]' type="text" placeholder='Soyad' />
+                                        <input className='max-[90%] h-[55px] py-[16px] px-[24px] text-[1.2rem] outline-0 border-[1px] rounded-[7px]' type="text" placeholder='Mobil' />
                                         <input className='max-[90%] h-[55px] py-[16px] px-[24px] text-[1.2rem] outline-0 border-[1px] rounded-[7px]' type="email" placeholder='E-poçt' />
                                         <input className='max-[90%] h-[55px] py-[16px] px-[24px] text-[1.2rem] outline-0 border-[1px] rounded-[7px]' type="password" placeholder='Şifrə' />
+                                        <input className='max-[90%] h-[55px] py-[16px] px-[24px] text-[1.2rem] outline-0 border-[1px] rounded-[7px]' type="password" placeholder='Şifrəni təsdiqləyin' />
                                     </div>
-                                    <button className='h-[60px] bg-[#ffdd00] text-[1.2rem] font-bold rounded-[7px]'>Daxil ol</button>
+                                    <button onClick={()=>setOpenSign(false)} className='h-[60px] bg-[#ffdd00] text-[1.2rem] font-bold rounded-[7px]'>Qeydiyyat</button>
                                     <div className='text-center text-[1.1rem] text-[#646464] w-[90%] m-auto'>
-                                        iTicket.AZ-da yenisiniz? 
-                                        <span className='text-[#bb7bdf] ml-[5px]'>Qeydiyyatdan keçin</span>
+                                        Artıq qeydiyyatdan keçmisiniz?
+                                        <span onClick={goLogin} className='text-[#bb7bdf] ml-[5px] cursor-pointer hover:underline'>Daxil Olun</span>
                                     </div>
                                 </div>
                             </Dialog.Panel>
