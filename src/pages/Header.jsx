@@ -9,19 +9,35 @@ import { BsThreeDots } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import LoginPanel from '../components/LoginPanel';
-import SignUp from '../components/SignUp';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../firebase';
+import { logout as storeLogout } from '../store/auth';
+import { RxExit } from "react-icons/rx";
 
 function Header() {
+  const dispatch = useDispatch()
+  const { user } = useSelector(state => state.auth)
+  console.log('user: ' + user);
 
   const [burger, setBurger] = useState(false)
   const [drop, setDrop] = useState(false)
+  const [userDrop, setUserDrop] = useState(false)
   const [openLog, setOpenLog] = useState(false)
 
-  function handleBurger() {setBurger(!burger)}
+  function handleBurger() { setBurger(!burger) }
 
-  function handleDrop() {setDrop(!drop)}
+  function handleDrop() { setDrop(!drop) }
 
-  function handleLogPanel() {setOpenLog(!openLog)}
+  function handleLogPanel() { setOpenLog(!openLog) }
+
+  function handleUserDrop() { setUserDrop(!userDrop) }
+
+  async function handleLogOut() {
+    setUserDrop(false)
+    await logout()
+    dispatch(storeLogout())
+  }
+
 
   return (
     <>
@@ -33,20 +49,35 @@ function Header() {
             <div>
               <RxHamburgerMenu onClick={handleBurger} className='text-[23px] text-[#BEBEBE]' />
             </div>
-            <img className='max-h-[36px]' src={logo} alt="" />
+            <Link to='/'>
+              <img className='max-h-[36px]' src={logo} alt="" />
+            </Link>
             <div className='flex items-center gap-[17px]'>
               <FaRegHeart className='md:text-[25px] md:block hidden text-[#BEBEBE]' />
               <IoIosCart className='md:text-[25px] text-[20px] text-[#BEBEBE]' />
-              <div onClick={handleLogPanel} className='md:text-[20px] bg-[#FFDD00] rounded-[50%] md:p-[15px] p-[10px] font-bold ' >
+              <div onClick={user ? handleUserDrop : handleLogPanel} className='md:text-[20px] bg-[#FFDD00] rounded-[50%] md:p-[15px] p-[10px] font-bold ' >
                 <FaRegUser className=' font-bold' />
               </div>
+              <ul className={`authDrop ${userDrop ? 'flex' : 'hidden'} absolute top-[80px] md:top-[95px] right-[15px] bg-[#fff] text-[16px] text-black font-[600] p-[10px] px-[15px] flex-col gap-[10px] rounded-[10px] z-[100]`}>
+                  <li className='font-[600] font-sans text-zinc-600'>{user && user.email}</li>
+                  <hr />
+                  <li><Link to='/profile'>Profil</Link></li>
+                  <li><Link>Mənim sifarişlərim</Link></li>
+                  <li><Link>Çatdırılma ünvanları</Link></li>
+                  <li><Link>Mənim kartlarım</Link></li>
+                  <li><Link>Tərəfdaşlıq Proqramı</Link></li>
+                  <li><Link>Cüzdan</Link></li>
+                  <li><Link>Şifrəni yenilə</Link></li>
+                  <hr />
+                  <li onClick={handleLogOut}><Link>Çıxış</Link></li>
+                </ul>
             </div >
           </div>
 
           <div className='absolute z-10 top-[10px] w-[100%] hidden xl:flex items-center justify-between py-[32px] px-[90px]'>
-            <div>
+            <Link to='/'>
               <img className='max-h-[36px] brightness-[10000%]' src={logo} alt="" />
-            </div>
+            </Link>
             <div className='flex items-center justify-between gap-[70px] text-white font-[600]'>
               <div className="lang-switcher text-[#ffffff] text-[12px]">
                 <Link className='border-[1px] border-[#ffffff] rounded-l-[5px] p-[4px]'>EN</Link>
@@ -73,12 +104,27 @@ function Header() {
                 </li>
               </ul>
             </div>
-            <div className='flex items-center justify-between gap-[20px] text-white text-[22px]'>
+            <div className='relative flex items-center justify-between gap-[20px] text-white text-[22px]'>
               <FaRegHeart />
               <IoSearch />
               <IoIosCart />
-              <div onClick={handleLogPanel} className='text-[20px] w-[50px] h-[50px] flex justify-center items-center bg-[#FFDD00] rounded-[50%] p-[10px] text-bold text-black' >
-                <FaRegUser />
+              <div className='dropWrapper'>
+                <div onClick={user ? handleUserDrop : handleLogPanel} className='userIcon text-[20px] w-[50px] h-[50px] flex justify-center items-center bg-[#FFDD00] rounded-[50%] p-[10px] text-bold text-black' >
+                  <FaRegUser />
+                </div>
+                <ul className={`authDrop ${userDrop ? 'flex' : 'hidden'} absolute top-[60px] right-0 bg-[#fff] text-[20px] text-black font-[600] py-[20px] px-[15px] flex-col gap-[15px] rounded-[10px] text-nowrap`}>
+                  <li className='font-[600] font-sans text-zinc-600'>{user && user.email}</li>
+                  <hr />
+                  <li><Link to='/profile'>Profil</Link></li>
+                  <li><Link>Mənim sifarişlərim</Link></li>
+                  <li><Link>Çatdırılma ünvanları</Link></li>
+                  <li><Link>Mənim kartlarım</Link></li>
+                  <li><Link>Tərəfdaşlıq Proqramı</Link></li>
+                  <li><Link>Cüzdan</Link></li>
+                  <li><Link>Şifrəni yenilə</Link></li>
+                  <hr />
+                  <li onClick={handleLogOut}><Link className='flex items-center justify-between'>Çıxış<RxExit /></Link></li>
+                </ul>
               </div>
             </div>
           </div>

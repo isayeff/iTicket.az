@@ -9,7 +9,6 @@ import { CntxData } from '../Context/ContextData';
 function EventSlider() {
 
     const data = useContext(CntxData)
-    console.log(data.events);        
     
     return (
         <>
