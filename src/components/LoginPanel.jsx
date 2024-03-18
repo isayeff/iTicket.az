@@ -18,7 +18,6 @@ export default function LoginPanel({ openLog, setOpenLog }) {
         setOpenLog(false)
         setOpenSign(true)
     }
-    console.log('log: '+ openLog)
 
     function onloggedIn() {
         setTimeout(() => {

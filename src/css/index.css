@@ -11,11 +11,11 @@
 
 body {
     background-color: #F9F9F9;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 @media (min-width: 1024px) {
-    nav:before {
+    .promotionSec:before {
         --tw-bg-opacity: 1;
         background-color: #fd0;
         background-color: rgba(255, 221, 0, var(--tw-bg-opacity));
@@ -78,10 +78,6 @@ body {
     z-index: -1;
 }
 
-.resNav {
-    box-shadow: 0px 41px 50px 5px rgba(0, 0, 0, 0.1);
-}
-
 @media (min-width: 1256px) {
     /* .hoverLink li .active:before {
         background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 88 9'%3E%3Cpath fill='%23FD0' d='m0 5 88-5v4L0 9z'/%3E%3C/svg%3E") no-repeat 50% 50%;
@@ -116,7 +112,7 @@ footer ul li a {
     .logPanel::before {
         --tw-bg-opacity: 1;
         background-color: #fd0;
-        background-color: rgba(255,221,0,var(--tw-bg-opacity));
+        background-color: rgba(255, 221, 0, var(--tw-bg-opacity));
         content: "";
         height: 154px;
         left: -98px;
@@ -128,3 +124,16 @@ footer ul li a {
         z-index: -1;
     }
 }
+
+header {
+    -webkit-box-shadow: 6px 0px 28px -9px rgba(172, 172, 172, 1);
+    -moz-box-shadow: 6px 0px 28px -9px rgba(172, 172, 172, 1);
+    box-shadow: 6px 0px 28px -9px rgba(172, 172, 172, 1);
+}
+
+/* .profilSec li:has(.active) {
+    background-color: #000;
+    color: #fff;
+    padding: 4px 20px;
+    border-radius: 20px;    
+} */

@@ -17,7 +17,6 @@ import { RxExit } from "react-icons/rx";
 function Header() {
   const dispatch = useDispatch()
   const { user } = useSelector(state => state.auth)
-  console.log('user: ' + user);
 
   const [burger, setBurger] = useState(false)
   const [drop, setDrop] = useState(false)
@@ -61,13 +60,13 @@ function Header() {
               <ul className={`authDrop ${userDrop ? 'flex' : 'hidden'} absolute top-[80px] md:top-[95px] right-[15px] bg-[#fff] text-[16px] text-black font-[600] p-[10px] px-[15px] flex-col gap-[10px] rounded-[10px] z-[100]`}>
                   <li className='font-[600] font-sans text-zinc-600'>{user && user.email}</li>
                   <hr />
-                  <li><Link to='/profile'>Profil</Link></li>
-                  <li><Link>Mənim sifarişlərim</Link></li>
-                  <li><Link>Çatdırılma ünvanları</Link></li>
-                  <li><Link>Mənim kartlarım</Link></li>
-                  <li><Link>Tərəfdaşlıq Proqramı</Link></li>
-                  <li><Link>Cüzdan</Link></li>
-                  <li><Link>Şifrəni yenilə</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link to='profile'>Profil</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Mənim sifarişlərim</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Çatdırılma ünvanları</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Mənim kartlarım</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Tərəfdaşlıq Proqramı</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Cüzdan</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Şifrəni yenilə</Link></li>
                   <hr />
                   <li onClick={handleLogOut}><Link>Çıxış</Link></li>
                 </ul>
@@ -89,9 +88,9 @@ function Header() {
                 <li><NavLink>Tamaşa</NavLink></li>
                 <li><NavLink>Uşaqlar</NavLink></li>
                 <li><NavLink className='lHover'>Dream Fest 2024</NavLink></li>
+                <li><NavLink className='lHover'>Hayal Kahvesi</NavLink></li>
                 <li><BsThreeDots onClick={handleDrop} className='text-[20px]' />
                   <ul className={`${drop ? 'block' : 'hidden'} absolute right-0 top-[40px] flex flex-col gap-[15px] bg-white rounded-[15px] text-black p-[20px] text-[18px]`}>
-                    <li><Link>Hayal Kahvesi</Link></li>
                     <li><Link>İdman</Link></li>
                     <li><Link>Muzey</Link></li>
                     <li><Link>Sirk</Link></li>
@@ -115,13 +114,13 @@ function Header() {
                 <ul className={`authDrop ${userDrop ? 'flex' : 'hidden'} absolute top-[60px] right-0 bg-[#fff] text-[20px] text-black font-[600] py-[20px] px-[15px] flex-col gap-[15px] rounded-[10px] text-nowrap`}>
                   <li className='font-[600] font-sans text-zinc-600'>{user && user.email}</li>
                   <hr />
-                  <li><Link to='/profile'>Profil</Link></li>
-                  <li><Link>Mənim sifarişlərim</Link></li>
-                  <li><Link>Çatdırılma ünvanları</Link></li>
-                  <li><Link>Mənim kartlarım</Link></li>
-                  <li><Link>Tərəfdaşlıq Proqramı</Link></li>
-                  <li><Link>Cüzdan</Link></li>
-                  <li><Link>Şifrəni yenilə</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link to='profile'>Profil</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Mənim sifarişlərim</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Çatdırılma ünvanları</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Mənim kartlarım</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Tərəfdaşlıq Proqramı</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Cüzdan</Link></li>
+                  <li onClick={()=>setUserDrop(false)}><Link>Şifrəni yenilə</Link></li>
                   <hr />
                   <li onClick={handleLogOut}><Link className='flex items-center justify-between'>Çıxış<RxExit /></Link></li>
                 </ul>
