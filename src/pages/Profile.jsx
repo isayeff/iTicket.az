@@ -1,12 +1,22 @@
 import React, { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { RxExit } from "react-icons/rx";
+import { useDispatch, useSelector } from 'react-redux';
+import { logout as storeLogout } from '../store/auth';
+import { logout } from '../firebase';
 
 function Profile() {
-
+    const dispatch = useDispatch()
+    const { user } = useSelector(state => state.auth)
     const [check, setCheck] = useState(true)
     let pathname = useLocation()
     console.log(pathname);
+    console.log(user);
+
+    async function handleLogout() {
+        await logout()
+        dispatch(storeLogout())
+    }
 
     return (
         <>
@@ -16,7 +26,7 @@ function Profile() {
                     <div className='flex flex-col lg:flex-row lg:justify-between gap-[15px]'>
                         <div className='lg:basis-[33.3%]'>
                             <label className='text-[#6B7280]' htmlFor="email">E-poçt</label>
-                            <input className='py-[12px] px-[16px] w-[100%] outline-0 border-[#E1E1E1] border-[1px] focus:bg-[#EEE] rounded-[7px]' id='email' type="text" />
+                            <input value={user.email} disabled className='py-[12px] px-[16px] w-[100%] outline-0 border-[#E1E1E1] border-[1px] focus:bg-[#EEE] rounded-[7px]' id='email' type="text" />
                         </div>
                         <div className='lg:basis-[33.3%]'>
                             <label className='text-[#6B7280]' htmlFor="ad">Ad</label>
@@ -39,8 +49,8 @@ function Profile() {
                         <div className='lg:basis-[33.3%]'>
                             <label className='te#6B7280xt-[]' htmlFor="">Cins</label>
                             <div className='w-[100%]'>
-                                <button onClick={()=>setCheck(true)} className={`w-[50%] ${check ? 'bg-[#FFDD00]' : 'bg-white'} rounded-l-[10px] h-[48px] border-[1px] border-[#e1e1e1]`}>Kişi</button>
-                                <button onClick={()=>setCheck(false)} className={`w-[50%] ${check ? 'bg-white' : 'bg-[#FFDD00]'} rounded-r-[10px] h-[48px] border-[1px] border-[#e1e1e1]`}>Qadın</button>
+                                <button onClick={() => setCheck(true)} className={`w-[50%] ${check ? 'bg-[#FFDD00]' : 'bg-white'} rounded-l-[10px] h-[48px] border-[1px] border-[#e1e1e1]`}>Kişi</button>
+                                <button onClick={() => setCheck(false)} className={`w-[50%] ${check ? 'bg-white' : 'bg-[#FFDD00]'} rounded-r-[10px] h-[48px] border-[1px] border-[#e1e1e1]`}>Qadın</button>
                             </div>
                         </div>
                     </div>
@@ -70,7 +80,7 @@ function Profile() {
                         <li className='px-[20px]'><NavLink>Şifrəni yenilə</NavLink></li>
                     </ul>
                     <div className='w-[100%] border-t-[0px] border-[#ECECEC]'>
-                        <Link className='flex items-center justify-between pl-[20px]'>Çıxış<RxExit /></Link>
+                        <Link onClick={handleLogout} className='flex items-center justify-between pl-[20px]'>Çıxış<RxExit /></Link>
                     </div>
                 </div>
             </div>
