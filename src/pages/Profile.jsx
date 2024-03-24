@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { RxExit } from "react-icons/rx";
 
 function Profile() {
 
+    const [check, setCheck] = useState(true)
     let pathname = useLocation()
     console.log(pathname);
 
@@ -38,8 +39,8 @@ function Profile() {
                         <div className='lg:basis-[33.3%]'>
                             <label className='te#6B7280xt-[]' htmlFor="">Cins</label>
                             <div className='w-[100%]'>
-                                <button className='w-[50%] bg-[#FFDD00] rounded-l-[10px] h-[48px] border-[1px] border-[#e1e1e1]'>Kişi</button>
-                                <button className='w-[50%] rounded-r-[10px] h-[48px] border-[1px] border-[#e1e1e1]'>Qadın</button>
+                                <button onClick={()=>setCheck(true)} className={`w-[50%] ${check ? 'bg-[#FFDD00]' : 'bg-white'} rounded-l-[10px] h-[48px] border-[1px] border-[#e1e1e1]`}>Kişi</button>
+                                <button onClick={()=>setCheck(false)} className={`w-[50%] ${check ? 'bg-white' : 'bg-[#FFDD00]'} rounded-r-[10px] h-[48px] border-[1px] border-[#e1e1e1]`}>Qadın</button>
                             </div>
                         </div>
                     </div>
@@ -58,7 +59,7 @@ function Profile() {
                         <button className='h-[52px] lg:basis-[25%] font-[900] text-[1.1rem] bg-[#9CA3AF] hover:bg-[#ED4343] text-white rounded-[10px]'>Hesabı sil</button>
                     </div>
                 </div>
-                <div className='hidden lg:flex flex-col p-[16px] justify-between border-l-[1px] border-[#ECECEC]'> 
+                <div className='hidden lg:flex flex-col p-[16px] justify-between border-l-[1px] border-[#ECECEC]'>
                     <ul className='flex flex-col gap-[20px]'>
                         <li className='px-[20px]'><NavLink to='/profile'>Profil</NavLink></li>
                         <li className='px-[20px]'><NavLink>Mənim sifarişlərim</NavLink></li>
